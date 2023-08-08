@@ -1,0 +1,27 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "dracoslides-checkout-app"
+client_id = "5872b86ae8410108773213be00f2fb97"
+application_url = "https://numerical-legacy-adware-counts.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://numerical-legacy-adware-counts.trycloudflare.com/auth/callback",
+  "https://numerical-legacy-adware-counts.trycloudflare.com/auth/shopify/callback",
+  "https://numerical-legacy-adware-counts.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-07"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "dracoslides123.myshopify.com"

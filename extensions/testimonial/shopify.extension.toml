@@ -1,0 +1,143 @@
+# Learn more about configuring your checkout UI extension:
+# https://shopify.dev/api/checkout-extensions/checkout/configuration
+
+# The version of APIs your extension will receive. Learn more:
+# https://shopify.dev/docs/api/usage/versioning
+api_version = "2023-07"
+
+[[extensions]]
+type = "ui_extension"
+name = "testimonial"
+handle = "testimonial"
+
+# Controls where in Shopify your extension will be injected,
+# and the file that contains your extension’s source code. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/targets-overview
+
+[[extensions.targeting]]
+module = "./src/Checkout.jsx"
+target = "purchase.checkout.block.render"
+
+[extensions.capabilities]
+# Gives your extension access to directly query Shopify’s storefront API.
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#api-access
+api_access = true
+
+# Gives your extension access to make external network calls, using the
+# JavaScript `fetch()` API. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#network-access
+network_access = true
+
+# Loads metafields on checkout resources, including the cart,
+# products, customers, and more. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#metafields
+
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_key"
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_other_key"
+
+# Defines settings that will be collected from merchants installing
+# your extension. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#settings-definition
+
+# [extensions.settings]
+# [[extensions.settings.fields]]
+# key = "banner_title"
+# type = "single_line_text_field"
+# name = "Banner title"
+# description = "Enter a title for the banner"
+[settings]
+ [[settings.fields]]
+  key = "heading_text"
+  type = "single_line_text_field"
+  name = "Heading Text"
+  description = "Plz Enter Heading Text"
+
+  [[settings.fields]]
+  key = "heading_block"
+  type = "single_line_text_field"
+  name = "Heading Text Reviews"
+  description = "Plz Enter Total Reviews"
+
+ [[settings.fields]]
+  key = "star_img"
+  type = "single_line_text_field"
+  name = "Star Image"
+  description = "Plz Upload Star Image In YourFile And paste Its Link Here"
+
+ [[settings.fields]]
+  key = "review_1"
+  type = "single_line_text_field"
+  name = "Review 1"
+  description = "Plz enter Review"
+
+  [[settings.fields]]
+  key = "review_1_author"
+  type = "single_line_text_field"
+  name = "Review 1 Author Name"
+  description = "Plz Enter Reviewer Name"
+  
+  [[settings.fields]]
+  key = "review_2"
+  type = "single_line_text_field"
+  name = "Review 2"
+  description = "Plz enter Review"
+
+  [[settings.fields]]
+  key = "review_2_author"
+  type = "single_line_text_field"
+  name = "Review 2 Author Name"
+  description = "Plz Enter Reviewer Name"
+
+  [[settings.fields]]
+  key = "review_3"
+  type = "single_line_text_field"
+  name = "Review 3"
+  description = "Plz enter Review"
+
+  [[settings.fields]]
+  key = "review_3_author"
+  type = "single_line_text_field"
+  name = "Review 3 Author Name"
+  description = "Plz Enter Reviewer Name"
+
+  [[settings.fields]]
+  key = "review_size"
+  type = "single_line_text_field"
+  name = "Review Text Size"
+  description = "Select Text Size"
+    [[settings.fields.validations]]
+    name = "choices"
+     value = '["base", "extralarge", "extrasmall", "large", "medium", "small"]'
+
+  [[settings.fields]]
+  key = "review_color"
+  type = "single_line_text_field"
+  name = "Review Text Color"
+  description = "Select Text Color"
+    [[settings.fields.validations]]
+    name = "choices"
+     value = '["accent", "critical", "info", "subdued", "success", "warning", "interactive", "monochrome"]'
+  
+  [[settings.fields]]
+  key = "author_size"
+  type = "single_line_text_field"
+  name = "Review Text Size"
+  description = "Select Text Size"
+    [[settings.fields.validations]]
+    name = "choices"
+     value = '["base", "extralarge", "extrasmall", "large", "medium", "small"]'
+
+  [[settings.fields]]
+  key = "author_color"
+  type = "single_line_text_field"
+  name = "Review Text Color"
+  description = "Select Text Color"
+    [[settings.fields.validations]]
+    name = "choices"
+     value = '["accent", "critical", "info", "subdued", "success", "warning", "interactive", "monochrome"]'
+
+  
